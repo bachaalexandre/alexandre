@@ -10,22 +10,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@85..100,400..700&display=swap">
 <style>
 /* Layout : « espace objet » d'un logiciel de CAO, fond pointé, calques par section, une scène 3D en ouverture. */
-/* Couleurs d'origine : fond sombre, calques cyan, ambre, magenta, vert. */
+/* Couleurs : bleu de plan (blueprint) vif, traits bleu ciel, jaune soleil pour l'action, rose et menthe pour les calques. */
 :root{
-  --bg:#101419;
-  --surface:#161B22;
-  --surface-2:#1B212A;
-  --line:#28303B;
-  --line-strong:#5B6677;
-  --dot:#222A34;
-  --fg:#E9EDF2;
-  --muted:#9AA6B5;
-  --blue:#5CC8E6;
-  --accent:#F2B33D;
-  --brown:#E07DC6;
-  --green:#7DCB8A;
-  --on-accent:#1A1305;
-  --shadow:#05070A;
+  --bg:#12348C;
+  --surface:#163C9C;
+  --surface-2:#1B45AB;
+  --line:#3561C4;
+  --line-strong:#86A8EC;
+  --dot:#2A55B8;
+  --fg:#F5F8FF;
+  --muted:#C6D5F7;
+  --blue:#A4DEFF;
+  --accent:#FFC23D;
+  --brown:#FF8FB8;
+  --green:#6FF2C4;
+  --on-accent:#1E1400;
+  --shadow:#071D52;
   --f-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -1039,7 +1039,7 @@ form:focus-within{border-color:color-mix(in srgb,var(--blue) 45%,var(--line));bo
       scene.add(grid);
       const group = new THREE.Group();
       scene.add(group);
-      const W = 3.0, D = 2.0, GAP = 0.82, THIN = 0.16, THICK = 0.52;
+      const W = 3.0, D = 2.0, GAP = 0.94, THIN = 0.16, THICK = 0.5;
       const outlinePts = [[-1, -1], [1, -1], [1, 1], [-1, 1], [-1, -1]].map(([x, z]) => new THREE.Vector3(x * (W / 2 + 0.35), 0.01, z * (D / 2 + 0.35)));
       const outline = new THREE.Line(new THREE.BufferGeometry().setFromPoints(outlinePts),
         new THREE.LineDashedMaterial({ color: C('--blue'), dashSize: 0.22, gapSize: 0.16, transparent: true, opacity: 0.6 }));
